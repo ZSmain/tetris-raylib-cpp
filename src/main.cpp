@@ -1,20 +1,24 @@
 #include <raylib.h>
+#include "grid.h"
 
 int main()
 {
-    Color darkGreen = Color{20, 160, 133, 255};
+    Color darkBlue = Color{44, 44, 127, 255};
 
-    const int screenWidth = 800;
+    const int screenWidth = 300;
     const int screenHeight = 600;
 
-    InitWindow(screenWidth, screenHeight, "My first RAYLIB program!");
+    InitWindow(screenWidth, screenHeight, "Raylib Tetris");
     SetTargetFPS(60);
+
+    Grid grid = Grid();
 
     while (!WindowShouldClose())
     {
         BeginDrawing();
-        ClearBackground(darkGreen);
-        
+        ClearBackground(darkBlue);
+        grid.draw();
+
         EndDrawing();
     }
 
