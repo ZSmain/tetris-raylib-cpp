@@ -1,5 +1,7 @@
 #include <raylib.h>
+
 #include "grid.h"
+#include "blocks.cpp"
 
 int main()
 {

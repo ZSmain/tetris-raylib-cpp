@@ -1,23 +1,22 @@
 #pragma once
 
 #include <vector>
+#include <map>
 #include <raylib.h>
 
+#include "position.h"
 #include "colors.h"
 
-class Grid
+class Block
 {
 public:
-    Grid();
-    void initialize();
-    void print();
+    Block();
     void draw();
-
-    int grid[20][10];
+    int id;
+    std::map<int, std::vector<Position>> cells;
 
 private:
-    int numRows;
-    int numCols;
     int cellSize;
+    int rotationState;
     std::vector<Color> colors;
 };

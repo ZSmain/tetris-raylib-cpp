@@ -1,14 +1,16 @@
-#include "grid.h"
 #include <iostream>
+
+#include "grid.h"
+#include "colors.h"
 
 Grid::Grid()
 {
     numRows = 20;
     numCols = 10;
     cellSize = 30;
+    colors = getCellColors();
 
     initialize();
-    colors = getCellColors();
 }
 
 void Grid::initialize()
@@ -34,20 +36,6 @@ void Grid::print()
     }
 }
 
-std::vector<Color> Grid::getCellColors()
-{
-    std::vector<Color> colors;
-    colors.push_back(DARKGRAY);
-    colors.push_back(GREEN);
-    colors.push_back(RED);
-    colors.push_back(ORANGE);
-    colors.push_back(YELLOW);
-    colors.push_back(PURPLE);
-    colors.push_back(BROWN);
-    colors.push_back(BLUE);
-    return colors;
-}
-
 void Grid::draw()
 {
     for (int i = 0; i < numRows; i++)
@@ -58,4 +46,4 @@ void Grid::draw()
             DrawRectangle(j * cellSize + 1, i * cellSize + 1, cellSize - 1, cellSize - 1, colors[cellValue]);
         }
     }
-} 
+}
