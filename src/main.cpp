@@ -1,7 +1,6 @@
 #include <raylib.h>
 
-#include "grid.h"
-#include "blocks.cpp"
+#include "game.h"
 
 int main()
 {
@@ -13,13 +12,13 @@ int main()
     InitWindow(screenWidth, screenHeight, "Raylib Tetris");
     SetTargetFPS(60);
 
-    Grid grid = Grid();
+    Game game = Game();
 
     while (!WindowShouldClose())
     {
         BeginDrawing();
         ClearBackground(darkBlue);
-        grid.draw();
+        game.draw();
 
         EndDrawing();
     }
